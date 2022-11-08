@@ -4,16 +4,27 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import static com.technical.utils.WebDriverUtils.getDriver;
+
 
 public class SelectMenuSteps {
+    private static WebDriver driver;
     @Given("User go to {string}")
-    public void userGoTo(String website) {
-        System.out.println(website);
+    public void userGoTo(String website){
+        driver = getDriver();
+        driver.get(website);
     }
 
     @When("User in {string} page")
     public void userInPage(String page) {
-        System.out.println(page);
+        WebElement selectMenu = driver.findElement(By.xpath("//*[text()='Select Menu']"));
+        selectMenu.isDisplayed();
+        Assert.assertEquals(selectMenu.getText(),page);
     }
 
     @And("User choose select value {string}")

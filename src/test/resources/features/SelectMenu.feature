@@ -8,7 +8,7 @@
 Feature: Select Menu
   Scenario: User select menu in drop down
     Given User go to "https://demoqa.com/select-menu"
-    When User in "select menu" page
+    When User in "Select Menu" page
     And User choose select value "Another root option"
     And User choose select one "Other"
     And User choose old style select menu "Aqua"
