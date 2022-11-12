@@ -9,13 +9,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import static com.technical.implement.AccessPage.accessPage;
 import static com.technical.utils.WebDriverUtils.*;
 
 public class SelectMenuSteps {
     @Given("User go to {string}")
     public void userGoTo(String website){
-        driver = getDriver();
-        driver.get(website);
+        accessPage(website);
     }
 
     @When("User in {string} page")
@@ -56,6 +56,17 @@ public class SelectMenuSteps {
     public void userSuccessInputAllSelectMenu() {
         String getActualMenu1 = driver.findElement(By.xpath("//*[@id='withOptGroup']//child::div/div/div")).getText();
         Assert.assertEquals(getActualMenu1,"Another root option");
+
+        String getActualMenu2 = driver.findElement(By.xpath("//*[@id='selectOne']//child::div/div/div")).getText();
+        Assert.assertEquals(getActualMenu2,"Other");
+
+        driver.findElement(By.xpath("//*[text()='Aqua']")).isDisplayed();
+
+        driver.findElement(By.xpath("//*[text()='Green']")).isDisplayed();
+        driver.findElement(By.xpath("//*[text()='Blue']")).isDisplayed();
+        driver.findElement(By.xpath("//*[text()='Black']")).isDisplayed();
+        driver.findElement(By.xpath("//*[text()='Red']")).isDisplayed();
+
         driver.close();
         driver.quit();
     }

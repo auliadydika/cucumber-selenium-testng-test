@@ -14,3 +14,4 @@ Feature: Select Menu
     And User choose old style select menu "Aqua"
     And User choose multi select drop down “all color”
     Then User success input all select menu
+
