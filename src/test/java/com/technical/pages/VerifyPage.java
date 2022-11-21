@@ -7,7 +7,10 @@ public class VerifyPage {
     public static void checkPage(String pageName){
         if (pageName.equals("Select Menu")){
             driver.findElement(By.xpath("//*[text()='Select Menu']")).isDisplayed();
-        }else
+        }else if (pageName.equals("Book Store")){
+            driver.findElement(By.xpath("//*[text()='Book Store']")).isDisplayed();
+        }else {
             System.out.println("salah");
+        }
     }
 }

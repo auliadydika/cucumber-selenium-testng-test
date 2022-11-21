@@ -1,7 +1,7 @@
 #Author        : Dika Auliady
 #Created Date  : 11 November 2022
-#Updated by    : -
-#Updated Date  : -
+#Updated by    : Dika
+#Updated Date  : 21 November 2022
 #Summary       : User can selecting menu
 
 @DemoTest
