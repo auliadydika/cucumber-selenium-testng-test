@@ -10,22 +10,25 @@ public class SelectMenuPage {
         driver.findElement(By.id("withOptGroup")).click();
         if (value.equals("Another root option")){
             driver.findElement(By.id("react-select-2-option-3")).click();
-        }else
+        }else {
             System.out.println("salah");
+        }
     }
     public static void selectTitle(String title){
         driver.findElement(By.id("selectOne")).click();
         if (title.equals("Other")){
             driver.findElement(By.id("react-select-3-option-0-5")).click();
-        }else
+        }else {
             System.out.println("salah");
+        }
     }
     public static void selectOldStyle(String color){
         Select oldStyle = new Select(driver.findElement(By.id("oldSelectMenu")));
         if (color.equals("Aqua")){
             oldStyle.selectByValue("10");
-        }else
+        }else {
             System.out.println("salah");
+        }
     }
     public static void multiSelect(){
         driver.findElement(By.xpath("//*[text()='Select...']")).click();
